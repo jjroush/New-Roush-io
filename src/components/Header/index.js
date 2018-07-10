@@ -22,16 +22,16 @@ const Header = () => (
           Roush.io
         </Link>
         <Link className="header-link" to="/video">
-        <h1>Video</h1>
+          <h1>Video</h1>
         </Link>
         <Link to="/web">
-        <h1>Web</h1>
+          <h1>Web</h1>
         </Link>
         <Link to="/blog">
-        <h1>Blog</h1>
+          <h1>Blog</h1>
         </Link>
         <Link to="/about">
-        <h1>About</h1>
+         <h1>About</h1>
         </Link>
       
       </h1>
