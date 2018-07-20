@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 import './index.css'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data }) => (
   <div>
     <Helmet
       title="Roush.io"
@@ -17,7 +17,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'Jacob, Roush, Developer, Web' },
       ]}
     />
-    <Header />
+    <Header data={data} />
     <div
       style={{
         margin: '0 auto',
@@ -37,3 +37,18 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    background: imageSharp(id: {regex: "../images/bg.jpg/"}) {
+      sizes(maxWidth: 1240, grayscale: true) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

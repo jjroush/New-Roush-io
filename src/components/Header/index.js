@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
+
 
 const HeaderWrapper = styled.div`
   background: DarkOrange;
@@ -40,6 +42,7 @@ const Nav = styled.nav`
 
 export default class Header extends Component {
   render() {
+    const { data } = this.props;
     return (
     <HeaderWrapper>
       <HeaderContainer>
@@ -47,7 +50,7 @@ export default class Header extends Component {
           <Link to="/" style={{color: 'white',textDecoration: 'none',}}>
             Roush.io
           </Link>
-          </h1>
+        </h1>
           <Nav>
             <ul>
               <li>
@@ -62,6 +65,14 @@ export default class Header extends Component {
             </ul>
         </Nav>
       </HeaderContainer> 
+      <Img style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%',
+        opacity: 0.2,
+      }} sizes={data.background.sizes} />
     </HeaderWrapper>
       
     )
