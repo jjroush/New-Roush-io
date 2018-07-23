@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 import './index.css'
 
-const TemplateWrapper = ({ children, data }) => (
+const TemplateWrapper = ({ children, data, location }) => (
   <div>
     <Helmet
       title="Roush.io"
@@ -17,7 +17,7 @@ const TemplateWrapper = ({ children, data }) => (
         { name: 'keywords', content: 'Jacob, Roush, Developer, Web' },
       ]}
     />
-    <Header data={data} />
+    <Header location={location} data={data} />
     <div
       style={{
         margin: '0 auto',
