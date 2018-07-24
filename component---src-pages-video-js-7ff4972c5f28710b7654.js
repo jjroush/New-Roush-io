@@ -1,0 +1,2 @@
+webpackJsonp([0x97a880bbd052],{143:function(e,t,u){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var a=u(1),d=n(a),l=function(){return d.default.createElement("div",null,"Video Page")};t.default=l,e.exports=t.default}});
+//# sourceMappingURL=component---src-pages-video-js-7ff4972c5f28710b7654.js.map
