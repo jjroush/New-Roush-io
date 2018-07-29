@@ -5,7 +5,7 @@ const FooterWrapper = styled.div`
   overflow: hidden;
   
   text-align: center;
-  height: 90px; 
+  height: 100px; 
   width: 100%;
   justify-content: center;
   background-color: black;
@@ -14,7 +14,7 @@ const FooterWrapper = styled.div`
 
 
 const FooterItems = styled.ul`
-    padding-top: 30px;
+    margin-top: 30px;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -41,22 +41,22 @@ const footer = () => (
  
     <FooterItems>
       <li>
-        <a href="https://www.linkedin.com/in/jjroush/">
+        <a target="_blank" href="https://www.linkedin.com/in/jjroush/">
           LinkedIn
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/jacob_roush">
+        <a target="_blank" href="https://twitter.com/jacob_roush">
           Twitter
         </a>
       </li>
       <li>
-        <a href="https://github.com/jjroush">
+        <a target="_blank" href="https://github.com/jjroush">
           Github       
         </a>
       </li>
       <li>
-        <a href="">
+        <a target="_blank" href="mailto:jacob@dimensionalvideo.com">
           Contact       
         </a>
       </li>

@@ -41,8 +41,8 @@ export default class ProjectPage extends Component {
         return (
         <div>
             <h1>Project Page</h1>
-                {projectList.map(project => (
-                <div>
+                {projectList.map((project, index) => (
+                <div key={index}>
                     <h3>{project.name}</h3>
                     <p>{project.desc}</p>
                 </div>

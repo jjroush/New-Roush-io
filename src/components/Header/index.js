@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 
 const HeaderWrapper = styled.div`
   background: DarkOrange;
-  margin-bottom: 1.45rem;
+  margin-bottom: ${({isHome}) => (isHome ? '0' : '1.45rem')};
   overflow: hidden;
   position: relative;
   height: ${({isHome}) => (isHome ? '100vh' : '40vh')}; 
@@ -21,6 +21,18 @@ const HeaderContainer = styled.div`
   z-index: 2;
   display: flex;
   justify-content: space-between;
+`;
+
+const HeroText = styled.div`
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30vh;
+  h1 {
+    font-size: 5em;
+  }
+  h3 {
+    font-size: 2em;
+  }
 `;
 
 const Nav = styled.nav`
@@ -45,7 +57,7 @@ const Nav = styled.nav`
 export default class Header extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     const { location } = this.props;
-    if (location.pathname !== prevProps.location.pathname) {
+    if (window.Animation && location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === '/') {
         this.wrapper.animate([{ height: '40vh' },{ height: '100vh' }], {
           duration: 300,
@@ -90,6 +102,10 @@ export default class Header extends Component {
             </ul>
         </Nav>
       </HeaderContainer> 
+      <HeroText>
+        <h1>Hey, I'm Jacob</h1>
+        <h3>I create things for the web.</h3>
+      </HeroText>
       <Img style={{
         position: 'absolute',
         left: 0,

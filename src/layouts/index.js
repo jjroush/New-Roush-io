@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
+import favicon from '../icons/favicon.png'
 import './index.css'
+
+const Content = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+`;
 
 const TemplateWrapper = ({ children, data, location }) => (
   <div>
@@ -14,20 +19,16 @@ const TemplateWrapper = ({ children, data, location }) => (
       title="Roush.io"
       meta={[
         { name: 'description', content: 'I like to build things on the web.' },
-        { name: 'keywords', content: 'Jacob, Roush, Developer, Web' },
+        { name: 'keywords', content: 'Jacob, Roush, Developer, Web, Iowa, Roushio' },
       ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+    ]}
     />
     <Header location={location} data={data} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        //minHeight: '50vh',
-      }}
-    >
+    <Content>
       {children()}
-    </div>
+    </Content>
     <Footer />
   </div>
 )
