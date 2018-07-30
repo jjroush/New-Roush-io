@@ -9,10 +9,10 @@ const aboutPage = () => (
     <p>Hey, I'm Jacob Roush. Nice to meet you!</p>
     <h3>The Web is a pretty cool place.</h3>
     <p>I am a Web Developer based out of central Iowa who is currently interning at Hy-vee and a student at Iowa State University.
-        I think an important part of being a developer is having a passion for what you make. I've worked on a couple different projects using: Node.js, React, 
+        An important part of being a developer is having a passion for what you make. I've worked on a couple different projects using: Node.js, React, 
         HTML5 and CSS that you can check out here.
     </p>
-    <h3>Tech Specs <i>(Buzzwords and Acronym's I know)</i></h3>
+    <h3>Tech Specs</h3>
     <p>Here are technologies I have varying experience of using through projects:</p>
     <p>JavaScript | HTML5 | CSS | NodeJS | React | PHP | WordPress</p>
     <h3>More About Me</h3>

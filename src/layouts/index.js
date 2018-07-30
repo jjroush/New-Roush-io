@@ -10,6 +10,8 @@ import './index.css'
 
 const Content = styled.div`
   margin: 0 auto;
+  padding-left: 8px;
+  padding-right: 8px;
   max-width: 960px;
 `;
 
@@ -25,6 +27,7 @@ const TemplateWrapper = ({ children, data, location }) => (
         { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
     ]}
     />
+    const isHome = 
     <Header location={location} data={data} />
     <Content>
       {children()}

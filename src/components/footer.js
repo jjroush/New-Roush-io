@@ -2,21 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterWrapper = styled.div`
-  overflow: hidden;
   
   text-align: center;
-  height: 100px; 
-  width: 100%;
-  justify-content: center;
+  min-height: 100px; 
+  
   background-color: black;
 `;
 
 
 
 const FooterItems = styled.ul`
-    margin-top: 30px;
+@media (min-width: 460px)  {
+  display: flex;
+  align-items: center;
+} 
+    padding-top: 30px;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-bottom: 30px;
     list-style: none;
-    display: flex;
     justify-content: center;
     li {
       margin-left: 12px;
@@ -31,7 +35,6 @@ const FooterItems = styled.ul`
         }
       }
     }
-  
 `;
 
 const footer = () => (
