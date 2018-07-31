@@ -11,6 +11,8 @@ const HeaderWrapper = styled.div`
   overflow: hidden;
   position: relative;
   height: ${({isHome}) => (isHome ? '100vh' : '40vh')}; 
+  text-align: right;
+
 `;
 
 const HeaderContainer = styled.div`
@@ -38,11 +40,16 @@ const HeroText = styled.div`
 const Nav = styled.nav`
   ul {
     list-style: none;
+    @media (min-width: 626px) {
     display: flex;
+    flex-wrap: wrap;
+    }
     li {
-      margin-left: 10px;
+      margin-left: 30px;
       font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       font-size: 1.5rem;
+      text-align: right;
+      list-style-position: inside;
       a {
         text-decoration: none;
         color: #fff;
@@ -88,14 +95,15 @@ export default class Header extends Component {
             Roush.io
           </Link>
         </h1>
+          
           <Nav>
             <ul>
               <li>
                 <Link to="/projects">PROJECTS</Link>
               </li>
-              {/* <li>              
-                <Link to="/blog">Blog</Link>
-              </li> */}
+             <li>              
+                <Link to="/posts">POSTS</Link>
+              </li>
               <li>
                 <Link to="/about">ABOUT</Link>
               </li>

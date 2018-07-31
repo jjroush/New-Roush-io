@@ -1,5 +1,4 @@
 import React from 'react'
-import linkedin from '../icons/linkedin';
 
 const NotFoundPage = () => (
   <div>

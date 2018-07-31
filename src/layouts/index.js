@@ -27,7 +27,6 @@ const TemplateWrapper = ({ children, data, location }) => (
         { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
     ]}
     />
-    const isHome = 
     <Header location={location} data={data} />
     <Content>
       {children()}
@@ -54,5 +53,7 @@ export const query = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+    
+  
   }
 `
