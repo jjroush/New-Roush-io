@@ -53,7 +53,5 @@ export const query = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    
-  
   }
 `

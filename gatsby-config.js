@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'Roush Portfolio Website',
+    desc: 'Hey, I\'m Jacob and I create things for the web.'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -18,6 +20,13 @@ module.exports = {
       options: {
         name: 'img',
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
       }
     },
     'gatsby-transformer-sharp',

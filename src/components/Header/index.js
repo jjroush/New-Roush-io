@@ -123,7 +123,6 @@ export default class Header extends Component {
         opacity: 0.2,
       }} sizes={data.background.sizes} />
     </HeaderWrapper>
-      
     )
   }
 }

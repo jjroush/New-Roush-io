@@ -1,13 +1,43 @@
 import React from 'react';
-import Img from 'gatsby-image'
+import Link from 'gatsby-link';
+import PostListing from '../components/Posts/PostListing';
 
-const BlogPage = () => (
-<div>
-<h1>Posts</h1>
-<h2>These are not the droids you are looking for...</h2>
-<img src="../images/droids.jpg/"/>
-<p>Don't worry content will be up soon.</p>
-</div>
+const postPage = ({data}) => (
+  <div>
+    <h2>Posts</h2>
+    {data.allMarkdownRemark.edges.map(({node}) => (
+       <PostListing key={node.id} post={node} />
+  ))}
+  </div>
 );
 
-export default BlogPage;
+
+export default postPage
+
+export const query = graphql`
+query SiteMeta{
+  site {
+    siteMetadata {
+      title
+      desc
+    }
+  }
+  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC
+  }) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "MMMM DD YYYY")
+        }
+        fields {
+          slug
+        }
+      html
+      excerpt
+      }
+    }
+  }
+}
+`;
