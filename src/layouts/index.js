@@ -13,6 +13,7 @@ const Content = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   max-width: 960px;
+  min-height: ${({isHome}) => (isHome ? '0' : '50vh' )};
 `;
 
 const TemplateWrapper = ({ children, data, location }) => (
@@ -28,7 +29,9 @@ const TemplateWrapper = ({ children, data, location }) => (
     ]}
     />
     <Header location={location} data={data} />
-    <Content>
+    <Content
+    isHome={location.pathname === '/'}
+    >
       {children()}
     </Content>
     <Footer />
