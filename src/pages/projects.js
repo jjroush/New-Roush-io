@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 
 const projectList = [
     {
-        name: 'Random Quote API',
+        name: 'Random Design Quote',
         link: '',
         desc: 'Created a basic responsive website that takes in an api and display\'s it using jQuery.',
         img: '',
@@ -13,7 +13,7 @@ const projectList = [
         img: '', 
     }, {
         name: 'Node.js Web Scrapper',
-        link: 'http://www.waukeefilmfest.org/',
+        link: 'https://github.com/jjroush/nvidia-crawler',
         desc: 'Built a web scrapper using Node.js and Cheerio to check the Nvidia website and see if a product is available',
         img: '', 
     }, {
@@ -43,7 +43,14 @@ export default class ProjectPage extends Component {
             <h1>Project Page</h1>
                 {projectList.map((project, index) => (
                 <div key={index}>
+                { project.link 
+                    ?
+                    <a href={project.link} target="_blank">
+                        <h3>{project.name}</h3>
+                    </a>
+                    :
                     <h3>{project.name}</h3>
+                }
                     <p>{project.desc}</p>
                 </div>
                 ))}
