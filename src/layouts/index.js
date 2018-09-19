@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ContactModal from '../components/ContactModal'
 import favicon from '../icons/favicon.png'
 import './index.css'
 
@@ -29,9 +30,8 @@ const TemplateWrapper = ({ children, data, location }) => (
     ]}
     />
     <Header location={location} data={data} />
-    <Content
-    isHome={location.pathname === '/'}
-    >
+    <ContactModal />
+    <Content isHome={location.pathname === '/'} >
       {children()}
     </Content>
     <Footer />

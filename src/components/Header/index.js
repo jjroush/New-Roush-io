@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import ContactModal from '../ContactModal'
 
 
 const HeaderWrapper = styled.div`
@@ -12,7 +13,6 @@ const HeaderWrapper = styled.div`
   position: relative;
   height: ${({isHome}) => (isHome ? '100vh' : '40vh')}; 
   text-align: right;
-
 `;
 
 const HeaderContainer = styled.div`
@@ -40,21 +40,22 @@ const HeroText = styled.div`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    @media (min-width: 626px) {
+    @media (min-width: 649px) {
     display: flex;
     flex-wrap: wrap;
     }
     li {
       margin-left: 30px;
       font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: right;
       list-style-position: inside;
-      a {
+      * {
         text-decoration: none;
         color: #fff;
         &:hover {
           color: #ddd;
+          cursor: pointer;
         }
       }
     }
@@ -62,6 +63,19 @@ const Nav = styled.nav`
 `;
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { isOpen: false };
+  }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  
+	
   componentDidUpdate = (prevProps, prevState) => {
     const { location } = this.props;
     if (window.Animation && location.pathname !== prevProps.location.pathname) {
@@ -84,18 +98,17 @@ export default class Header extends Component {
   };
 
   render() {
-    const { data, location } = this.props;
+    const { data, location, showModal } = this.props;
     return (
     <HeaderWrapper
     isHome={location.pathname === '/'}
     ref={(wrapper) => this.wrapper = ReactDOM.findDOMNode(wrapper)}>
       <HeaderContainer>
-        <h1 style={{ margin: 0 }}>
+        <h2 style={{ margin: 0 }}>
           <Link to="/" style={{color: 'white',textDecoration: 'none',}}>
             Roush.io
           </Link>
-        </h1>
-          
+        </h2>
           <Nav>
             <ul>
               <li>
@@ -107,13 +120,19 @@ export default class Header extends Component {
               <li>
                 <Link to="/about">ABOUT</Link>
               </li>
+              <li>
+                <div onClick={this.toggleModal}>CONTACT</div>
+              </li>
             </ul>
         </Nav>
-      </HeaderContainer> 
+      <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
+      </HeaderContainer>
+      
       <HeroText>
         <h1>Hey, I'm Jacob</h1>
         <h3>I create things for the web.</h3>
       </HeroText>
+     
       <Img style={{
         position: 'absolute',
         left: 0,

@@ -58,11 +58,6 @@ const footer = () => (
           Github       
         </a>
       </li>
-      <li>
-        <a target="_blank" href="mailto:jacob@dimensionalvideo.com">
-          Contact       
-        </a>
-      </li>
     </FooterItems>
  
 </FooterWrapper>
