@@ -18,8 +18,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     }
 };
 
-// Getting into Web Development in 2018
-
 exports.createPages = ({ graphql, boundActionCreators }) => {
     const { createPage } = boundActionCreators;
     return new Promise((resolve, reject) => {

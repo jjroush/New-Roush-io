@@ -4,7 +4,7 @@ import PostListing from '../components/Posts/PostListing';
 
 const postPage = ({data}) => (
   <div>
-    <h2>Posts</h2>
+    <h1>Posts</h1>
     {data.allMarkdownRemark.edges.map(({node}) => (
        <PostListing key={node.id} post={node} />
   ))}

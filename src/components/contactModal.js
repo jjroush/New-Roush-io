@@ -23,6 +23,9 @@ const ModalWrapper = styled.div`
     background: white;
     padding: 35px;
     text-align: center;
+    a {
+        color: darkgray;
+    }
 `;
 
 const CloseButton = styled.div`
@@ -44,11 +47,8 @@ export default class ContactModal extends Component {
        if(!this.props.show) {
         return null;
       }
-
-      
-        
             return (
-                <BackdropStyle onClick={this.props.onClose}>
+                <BackdropStyle>
                     <ModalWrapper>
                         <CloseButton onClick={this.props.onClose}>&times;</CloseButton>
                         <h1>Contact Me</h1>
@@ -61,8 +61,9 @@ export default class ContactModal extends Component {
                     </ModalWrapper>
                 </BackdropStyle>
             )
+            }
     }
-}
+
     ContactModal.propTypes = {
         onClose: PropTypes.func.isRequired,
         show: PropTypes.bool
