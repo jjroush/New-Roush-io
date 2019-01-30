@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
+
 import PostListing from '../components/Posts/PostListing';
+import EmailSignup from '../components/Posts/EmailSignup';
 
 const postPage = ({data}) => (
   <div>
@@ -8,6 +10,7 @@ const postPage = ({data}) => (
     {data.allMarkdownRemark.edges.map(({node}) => (
        <PostListing key={node.id} post={node} />
   ))}
+    <EmailSignup />
   </div>
 );
 

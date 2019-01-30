@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import EmailSignup from '../components/Posts/EmailSignup';
+
 export default class PostPage extends Component {
     render() {
         const { data } = this.props;
@@ -12,6 +14,7 @@ export default class PostPage extends Component {
                     __html: data.markdownRemark.html
                     }} 
                  />
+                <EmailSignup />
             </div>
         )
     }

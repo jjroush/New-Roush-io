@@ -65,6 +65,6 @@ export default class ContactModal extends Component {
     }
 
     ContactModal.propTypes = {
-        onClose: PropTypes.func.isRequired,
+        onClose: PropTypes.func,
         show: PropTypes.bool
     };

@@ -16,7 +16,7 @@ const projectList = [
     }, {
         name: 'Node.js Web Scrapper',
         link: 'https://github.com/jjroush/nvidia-crawler',
-        tags: '',
+        tags: 'Node.js',
         desc: 'Built a web scrapper using Node.js and Cheerio to check the Nvidia website and see if a product is available',
         img: '', 
     }, {
@@ -26,14 +26,8 @@ const projectList = [
         desc: 'Made a website that consumes the Facial Detection api then overlays what is shown. This was done during the Spring 2018 HACK ISU',
         img: '', 
     }, {
-        name: 'Roush.io (You are here.)',
-        link: '',
-        tags: '',
-        desc: 'Created a portfolio website using, Gatsby.JS, a static sight generator.',
-        img: '', 
-    }, {
         name: 'MIS Club Attendence Application',
-        link: 'https://github.com/jjroush/HackISU-2018-Shape-Detection',
+        link: 'https://github.com/jjroush/isu-misclub-information-system',
         tags: '',
         desc: 'Maintained and updated an electron desktop application that was used to take member attendence for MIS club.',
         img: '', 
@@ -46,7 +40,7 @@ export default class ProjectPage extends Component {
     render() {
         return (
         <div>
-            <h1>Project Page</h1>
+            <h1>Projects</h1>
                 {projectList.map((project, index) => (
                 <div key={index}>
                 { project.link 
@@ -60,6 +54,7 @@ export default class ProjectPage extends Component {
                     <p>{project.desc}</p>
                 </div>
                 ))}
+            {/* <h1>Video Projects</h1> */}
         </div>
         );
     }
