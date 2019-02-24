@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import ContactModal from '../components/ContactModal'
+import Header from './Header'
+import Footer from './Footer'
+import ContactModal from './ContactModal'
 import favicon from '../icons/favicon.png'
-import './index.css'
+import './layout.css'
 
 const Content = styled.div`
   margin: 0 auto;
@@ -31,7 +31,7 @@ const TemplateWrapper = ({ children, data, location }) => (
     />
     <Header location={location} data={data} />
     <ContactModal />
-    <Content isHome={location.pathname === '/'} >
+    <Content isHome={location.pathname === undefined} >
       {children}
     </Content>
     <Footer />

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import Layout from '../components/layout'
 
 const projectList = [
     {
@@ -39,7 +40,7 @@ const projectList = [
 export default class ProjectPage extends Component {
     render() {
         return (
-        <div>
+        <Layout>
             <h1>Projects</h1>
                 {projectList.map((project, index) => (
                 <div key={index}>
@@ -55,7 +56,7 @@ export default class ProjectPage extends Component {
                 </div>
                 ))}
             {/* <h1>Video Projects</h1> */}
-        </div>
+        </Layout>
         );
     }
 }
