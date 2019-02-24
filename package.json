@@ -1,12 +1,13 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "roush-io",
+  "description": "Personal Site",
   "version": "1.0.0",
   "author": "Jacob Roush",
   "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-image": "^1.0.55",
-    "gatsby-link": "^1.6.39",
+    "gatsby": "latest",
+    "gatsby-image": "^2.0.29",
+    "gatsby-link": "^2.0.12",
+    "gatsby-plugin-feed": "^2.0.13",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sharp": "^1.6.48",
@@ -17,7 +18,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.1.3"
   },
   "keywords": [
     "gatsby"
@@ -31,7 +32,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
     "prettier": "^1.11.1"
   }
 }

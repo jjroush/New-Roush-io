@@ -10,7 +10,7 @@ src="https://s3.amazonaws.com/roush-image/hackermanx200.jpg" alt="Mr. Robot">
 I've watched a lot of Mr. Robot. I also have been binging two great podcast on hacking/IT security: *Darknet Diaries* and *Hackable?*. These shows have made me slightly paranoid about application security. 
 
 
-It made me wonder, how can I see network request on a phone app or even a IoT device?
+It made me wonder, how can I see network request on a phone app?
 
 This is possible, but we will need to setup a [proxy](https://en.wikipedia.org/wiki/Proxy_server).
 
@@ -44,7 +44,7 @@ You're almost ready to start proxying. Except we need to get a certificate on ou
 
 ### Now your ready to Proxy!
 
-Open up your terminal and run `mitmproxy` open an app on your phone. You will now see network request begin to pour in.
+Open up your terminal and run `mitmproxy` open an app on your phone. You will now see network request begin to pour in. *If you are having trouble connecting, try renewing the DCHP Lease. Sometimes the IP your device is pointing to gets changed.*
 
 ![](https://s3.amazonaws.com/roush-image/mitm-proxy-terminalx450.jpg)
 

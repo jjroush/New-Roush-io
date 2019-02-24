@@ -29,6 +29,9 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    {
+      resolve: 'gatsby-plugin-feed'
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp'
   ],

@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children, data, location }) => (
     <Header location={location} data={data} />
     <ContactModal />
     <Content isHome={location.pathname === '/'} >
-      {children()}
+      {children}
     </Content>
     <Footer />
   </div>

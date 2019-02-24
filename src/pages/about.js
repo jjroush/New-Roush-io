@@ -36,7 +36,7 @@ export default class aboutPage extends Component {
             Another skill that I am passionate about is video production. I think video can be a cool tool to tell stories. 
             You can check out some of that work here. 
             I am currently working towards my Bachleor's in Managment of Information Systems. This is a degree that gives both technical and business knowledge.
-            This is a perfect program for me as it combines my interest of business and the problem-solving involved. As well as technology by learning how to solve these problems with technology.
+            The program is perfect for me as it combines my interest of business and the problem-solving involved. As well as technology by learning how to solve these problems with technology.
             </p>
             <p>
             I am big fan of spicy food and am constantly on the lookout for new hot sauces to try. My current is the Secret AardVark Habenero Hot Sauce. 
