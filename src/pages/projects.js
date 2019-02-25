@@ -46,7 +46,7 @@ export default class ProjectPage extends Component {
                 <div key={index}>
                 { project.link 
                     ?
-                    <a href={project.link} target="_blank">
+                    <a href={project.link} rel="noopener noreferrer" target="_blank">
                         <h3>{project.name}</h3>
                     </a>
                     :

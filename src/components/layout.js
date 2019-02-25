@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import {StaticQuery, graphql} from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './Header'
@@ -18,24 +19,42 @@ const Content = styled.div`
 `;
 
 const TemplateWrapper = ({ children, data, location }) => (
-  <div>
-    <Helmet
-      title="Roush.io"
-      meta={[
-        { name: 'description', content: 'I like to build things on the web.' },
-        { name: 'keywords', content: 'Jacob, Roush, Developer, Web, Iowa, Roushio' },
-      ]}
-      link={[
-        { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
-    ]}
-    />
-    <Header location={location} data={data} />
-    <ContactModal />
-    <Content isHome={location.pathname === undefined} >
-      {children}
-    </Content>
-    <Footer />
-  </div>
+  <StaticQuery 
+    query={graphql`
+      query LayoutQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        background: imageSharp(id: {regex: "../images/bg.jpg/"}) {
+          fluid(maxWidth: 1240, grayscale: true) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+  `}
+    render={data => (
+      <>
+        <Helmet
+          title="Roush.io"
+          meta={[
+            { name: 'description', content: 'I like to build things on the web.' },
+            { name: 'keywords', content: 'Jacob, Roush, Developer, Web, Iowa, Roushio' },
+          ]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+        ]}
+        />
+        <Header location={location} data={data} />
+        <ContactModal />
+        <Content isHome={true} >
+          {children}
+        </Content>
+        <Footer />
+      </>
+    )}
+  />
 )
 
 TemplateWrapper.propTypes = {
@@ -44,17 +63,3 @@ TemplateWrapper.propTypes = {
 
 export default TemplateWrapper
 
-export const query = graphql`
-  query LayoutQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    background: imageSharp(id: {regex: "../images/bg.jpg/"}) {
-      sizes(maxWidth: 1240, grayscale: true) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
-`

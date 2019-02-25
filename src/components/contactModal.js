@@ -54,7 +54,7 @@ export default class ContactModal extends Component {
                         <h1>Contact Me</h1>
                         <h3>Feel free to reach out!</h3>
                         <h2>
-                            <a href="mailto:jacob@roush.io" target="_blank">
+                            <a href="mailto:jacob@roush.io" target="_blank" rel="noopener noreferrer">
                                 jacob@roush.io
                             </a>
                         </h2>

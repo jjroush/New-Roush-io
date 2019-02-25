@@ -44,17 +44,17 @@ const footer = () => (
  
     <FooterItems>
       <li>
-        <a target="_blank" href="https://www.linkedin.com/in/jjroush/">
+        <a target="_blank" href="https://www.linkedin.com/in/jjroush/" rel="noopener noreferrer">
           LinkedIn
         </a>
       </li>
       <li>
-        <a target="_blank" href="https://twitter.com/jacob_roush">
+        <a target="_blank" href="https://twitter.com/jacob_roush" rel="noopener noreferrer">
           Twitter
         </a>
       </li>
       <li>
-        <a target="_blank" href="https://github.com/jjroush">
+        <a target="_blank" href="https://github.com/jjroush" rel="noopener noreferrer">
           Github       
         </a>
       </li>

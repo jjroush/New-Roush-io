@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ContactModal from '../components/ContactModal';
-import Link from 'gatsby-link'
 import Layout from '../components/layout'
 
 

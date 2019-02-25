@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 
 import PostListing from '../components/Posts/PostListing';
 import EmailSignup from '../components/Posts/EmailSignup';

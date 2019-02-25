@@ -140,7 +140,7 @@ export default class Header extends Component {
         width: '100%',
         height: '100%',
         opacity: 0.2,
-      }} sizes={data.background.sizes} />
+      }} fluid={data.background.fluid} />
     </HeaderWrapper>
     )
   }

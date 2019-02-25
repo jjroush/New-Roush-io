@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Layout from '../components/layout'
-const IndexPage = () => (
-  <Layout>
+
+const IndexPage = props => (
+  <Layout location={props.location}>
   <div></div>
   </Layout>
 )
