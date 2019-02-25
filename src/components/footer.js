@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const FooterWrapper = styled.div`
   
   text-align: center;
-  min-height: 100px; 
+  min-height: 145px; 
   
   background-color: black;
 `;

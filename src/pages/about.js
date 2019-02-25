@@ -19,7 +19,7 @@ export default class aboutPage extends Component {
     render() {
         const devYears = () => new Date().getFullYear() - 2016;
         return (
-          <Layout>
+          <>
             <div>
             <h1>About</h1>
             <p>Hey, I'm Jacob Roush.</p>
@@ -46,7 +46,7 @@ export default class aboutPage extends Component {
             <p>If you have any questions or are interested in working with me. <a onClick={this.toggleModal}>Feel free to contact me.</a></p>
             <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
         </div>
-        </Layout>
+        </>
         )
 
     }

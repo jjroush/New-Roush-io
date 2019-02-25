@@ -8,6 +8,12 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-styled-components',
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+          component: require.resolve('./src/components/layout.js')
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-88693051-2",

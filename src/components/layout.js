@@ -15,7 +15,7 @@ const Content = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   max-width: 960px;
-  min-height: ${({isHome}) => (isHome ? '0' : '50vh' )};
+  min-height: ${({isHome}) => (isHome ? '0' : '60vh' )};
 `;
 
 const TemplateWrapper = ({ children, data, location }) => (
@@ -27,9 +27,12 @@ const TemplateWrapper = ({ children, data, location }) => (
             title
           }
         }
-        background: imageSharp(id: {regex: "../images/bg.jpg/"}) {
-          fluid(maxWidth: 1240, grayscale: true) {
-            ...GatsbyImageSharpFluid
+        background: file(relativePath: {eq: "bg.jpg"}) {
+          childImageSharp {
+            # file(relativePath: { eq: "images/myimage.jpg" }) {
+            fluid(maxWidth: 1240, grayscale: true) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
@@ -48,7 +51,7 @@ const TemplateWrapper = ({ children, data, location }) => (
         />
         <Header location={location} data={data} />
         <ContactModal />
-        <Content isHome={true} >
+        <Content isHome={location.pathname === '/'} >
           {children}
         </Content>
         <Footer />
@@ -58,7 +61,7 @@ const TemplateWrapper = ({ children, data, location }) => (
 )
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
 }
 
 export default TemplateWrapper

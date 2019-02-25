@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import Link from 'gatsby-link'
+import {Link} from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import ContactModal from '../ContactModal'
 
+const minimizedHeader = '20vh';
 
 const HeaderWrapper = styled.div`
   background: DarkOrange;
   margin-bottom: ${({isHome}) => (isHome ? '0' : '1.45rem')};
   overflow: hidden;
   position: relative;
-  height: ${({isHome}) => (isHome ? '100vh' : '40vh')}; 
+  height: ${({isHome}) => (isHome ? '100vh' : minimizedHeader)}; 
+  min-height: 180px;
   text-align: right;
 `;
 
@@ -76,18 +78,18 @@ export default class Header extends Component {
   }
   
 	
-  componentDidUpdate = (prevProps, prevState) => {
-    const { location } = this.props;
+  componentDidUpdate = (prevProps) => {
+    const {location} = this.props;
     if (window.Animation && location.pathname !== prevProps.location.pathname) {
       if (this.props.location.pathname === '/') {
-        this.wrapper.animate([{ height: '40vh' },{ height: '100vh' }], {
+        this.wrapper.animate([{ height: minimizedHeader },{ height: '100vh' }], {
           duration: 300,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
           iterations: 1
         })
       } else if (prevProps.location.pathname === '/') {
-        this.wrapper.animate([{ height: '100vh' },{ height: '40vh' }], {
+        this.wrapper.animate([{ height: '100vh' },{ height: minimizedHeader }], {
           duration: 300,
           fill: 'forwards',
           easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
@@ -98,7 +100,7 @@ export default class Header extends Component {
   };
 
   render() {
-    const { data, location, showModal } = this.props;
+    const {data, location} = this.props;
     return (
     <HeaderWrapper
     isHome={location.pathname === '/'}
@@ -140,7 +142,7 @@ export default class Header extends Component {
         width: '100%',
         height: '100%',
         opacity: 0.2,
-      }} fluid={data.background.fluid} />
+      }} fluid={data.background.childImageSharp.fluid} />
     </HeaderWrapper>
     )
   }
