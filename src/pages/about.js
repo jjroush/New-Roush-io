@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ContactModal from '../components/ContactModal';
-import Layout from '../components/layout'
-
 
 export default class aboutPage extends Component {
     constructor(props) {
@@ -43,7 +41,10 @@ export default class aboutPage extends Component {
             I am big fan of spicy food and am constantly on the lookout for new hot sauces to try. My current is the Secret AardVark Habenero Hot Sauce. 
             I'm always looking for recommendations.
             </p>
-            <p>If you have any questions or are interested in working with me. <a onClick={this.toggleModal}>Feel free to contact me.</a></p>
+            <p>If you have any questions or are interested in working with me. <a 
+              // eslint-disable jsx-a11y/anchor-is-valid
+              onClick={this.toggleModal}
+            >Feel free to contact me.</a></p>
             <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
         </div>
         </>
