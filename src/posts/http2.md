@@ -1,6 +1,6 @@
 ---
 title: 'What is HTTP 2 and should I care?'
-date: '2019-05-20'
+date: '2019-07-15'
 ---
 
 ![HTTP2 80's cover](https://roush-image.s3.amazonaws.com/http2-cover.jpg)
@@ -48,7 +48,7 @@ Hopefully you're at least a little amped for HTTP2, even if its just 12% amped u
 
 <img src ="https://roush-image.s3.amazonaws.com/http2-firefox-devtools.jpg"/>
 
-It's important to note that HTTP2 is dependent on the server hosting the resource, so if using an image CDN is without support for HTTP2, your site may support thelatest and greatest stuff but images may not benefit from the speed increase.
+It's important to note that HTTP2 is dependent on the server hosting the resource, so if using an image CDN is without support for HTTP2, your site may support the latest and greatest stuff but images may not benefit from the speed increase.
 
 ## Conclusion
 
