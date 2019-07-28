@@ -1,6 +1,7 @@
 ---
 title: 'What is HTTP 2 and should I care?'
 date: '2019-07-15'
+keywords: 'http2, protocol, web performance'
 ---
 
 ![HTTP2 80's cover](https://roush-image.s3.amazonaws.com/http2-cover.jpg)
