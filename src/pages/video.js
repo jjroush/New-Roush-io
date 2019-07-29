@@ -19,7 +19,7 @@ const StyledIframe = styled.iframe`
 const VideoPage = props => (
   <>
     <h1>Videography</h1>
-    <p>Because software isn't the only thing I like to create</p>
+    <h2>Because software isn't the only thing I like to create</h2>
     <StyledIframeContainer>
       <StyledIframe
         title="2017 Demo Reel"
