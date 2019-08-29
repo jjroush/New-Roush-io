@@ -19,6 +19,7 @@ module.exports = {
         trackingId: 'UA-88693051-2',
         // Puts tracking script in the head instead of the body
         head: false,
+        respectDNT: true,
       },
     },
     {
