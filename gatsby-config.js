@@ -1,3 +1,5 @@
+const isLocal = process.env.NODE_ENV === 'development';
+
 module.exports = {
   siteMetadata: {
     title: 'Roush Portfolio Website',
@@ -34,6 +36,7 @@ module.exports = {
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
+        ignore: isLocal ? [] : ['**/_*.md']
       },
     },
     {
