@@ -1,3 +1,5 @@
+const isLocal = process.env.NODE_ENV === 'development';
+
 module.exports = {
   siteMetadata: {
     title: 'Roush Portfolio Website',
@@ -19,6 +21,7 @@ module.exports = {
         trackingId: 'UA-88693051-2',
         // Puts tracking script in the head instead of the body
         head: false,
+        respectDNT: true,
       },
     },
     {
@@ -33,6 +36,7 @@ module.exports = {
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
+        ignore: isLocal ? [] : ['**/_*.md']
       },
     },
     {
