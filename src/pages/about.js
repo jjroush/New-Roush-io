@@ -14,7 +14,7 @@ export default class aboutPage extends Component {
       isOpen: !this.state.isOpen,
     })
   }
-
+  /* eslint-disable */
   render() {
     const devYears = () => new Date().getFullYear() - 2016
     return (
@@ -56,7 +56,7 @@ export default class aboutPage extends Component {
           <p>
             If you have any questions or are interested in working with me.{' '}
             <a
-              // eslint-disable jsx-a11y/anchor-is-valid
+              // eslint-disable-next-line
               onClick={this.toggleModal}
             >
               Feel free to contact me.

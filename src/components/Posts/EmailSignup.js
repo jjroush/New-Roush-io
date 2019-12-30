@@ -12,13 +12,6 @@ const Container = styled.div`
   text-align: center;
 `
 
-const SuccessDiv = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: green;
-  padding: 0px;
-`
-
 const Button = styled.button`
   background-color: black;
   border: none;
@@ -98,22 +91,22 @@ class EmailSignup extends Component {
         {this.state.response ? (
           <h1>{this.state.response}</h1>
         ) : (
-          <>
-            <Header>Want emails whenever I have something cool to say?</Header>
-            <form onSubmit={this.postRequest}>
-              <Input
-                type="email"
-                name="email"
-                autoComplete="on"
-                value={this.state.email}
-                onChange={this.onChange}
-              />
-              <Button disabled={!this.state.email} onClick={this.postRequest}>
-                Yes
+            <>
+              <Header>Want emails whenever I have something cool to say?</Header>
+              <form onSubmit={this.postRequest}>
+                <Input
+                  type="email"
+                  name="email"
+                  autoComplete="on"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                />
+                <Button disabled={!this.state.email} onClick={this.postRequest}>
+                  Yes
               </Button>
-            </form>
-          </>
-        )}
+              </form>
+            </>
+          )}
       </Container>
     )
   }

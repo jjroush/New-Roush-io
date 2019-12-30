@@ -1,10 +1,33 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
 import { graphql } from 'gatsby'
 import EmailSignup from '../components/Posts/EmailSignup'
+import LikeButton from '../components/Posts/LikeButton'
+
+const LikeCountSpan = styled.span`
+  color: #800000;
+`;
+
+const BlogFooterContainer = styled.div`
+  display: flex;
+`;
 
 export default class PostPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      likes: false
+    };
+  }
+
+  componentDidMount() {
+    fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${window.location.pathname.slice(0, -1).substring(7)}`)
+      .then(response => response.json())
+      .then(data => this.setState({ likes: data.Likes }))
+  }
+
   render() {
     const { data } = this.props
     return (
@@ -24,14 +47,18 @@ export default class PostPage extends Component {
             },
           ]}
         />
-        <span>{data.markdownRemark.frontmatter.date}</span>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <span>{data.markdownRemark.frontmatter.date + ' - '}<LikeCountSpan>{`    ${this.state.likes ? this.state.likes : 0} like${this.state.likes !== 1 ? 's' : ''}`}</LikeCountSpan></span>
+        <br />
         <div
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark.html,
           }}
         />
-        <EmailSignup />
+        <BlogFooterContainer>
+          <LikeButton article={window.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
+          <EmailSignup />
+        </BlogFooterContainer>
       </>
     )
   }

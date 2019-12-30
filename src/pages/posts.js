@@ -1,11 +1,11 @@
 import React from 'react';
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import PostListing from '../components/Posts/PostListing'
 import EmailSignup from '../components/Posts/EmailSignup'
 
-const postPage = (props, {data}) => (
-  <StaticQuery 
+const postPage = (props, { data }) => (
+  <StaticQuery
     query={graphql`
       query SiteMeta{
     site {
@@ -33,16 +33,16 @@ const postPage = (props, {data}) => (
     }
   }
 `}
-  render={data => (
-    <>
-      <h1>Posts</h1>
-      {data.allMarkdownRemark.edges.map(({node}) => (
-        <PostListing key={node.id} post={node} />
-    ))}
-      <EmailSignup />
-    </>
+    render={data => (
+      <>
+        <h1>Posts</h1>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <PostListing key={node.id} post={node} />
+        ))}
+        <EmailSignup />
+      </>
     )}
-    />
-  );
+  />
+);
 
-  export default postPage
+export default postPage
