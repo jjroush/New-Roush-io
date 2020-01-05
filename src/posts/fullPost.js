@@ -23,7 +23,7 @@ export default class PostPage extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${window.location.pathname.slice(0, -1).substring(7)}`)
+    fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${this.props.location.pathname.slice(0, -1).substring(7)}`)
       .then(response => response.json())
       .then(data => this.setState({ likes: data.Likes }))
   }
@@ -56,7 +56,7 @@ export default class PostPage extends Component {
           }}
         />
         <BlogFooterContainer>
-          <LikeButton article={window.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
+          <LikeButton article={this.props.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
           <EmailSignup />
         </BlogFooterContainer>
       </>

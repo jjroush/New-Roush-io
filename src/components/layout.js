@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './Header'
@@ -15,11 +15,11 @@ const Content = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   max-width: 960px;
-  min-height: ${({isHome}) => (isHome ? '0' : '60vh' )};
+  min-height: ${({ isHome }) => (isHome ? '0' : '60vh')};
 `;
 
 const TemplateWrapper = ({ children, data, location }) => (
-  <StaticQuery 
+  <StaticQuery
     query={graphql`
       query LayoutQuery {
         site {
@@ -47,11 +47,11 @@ const TemplateWrapper = ({ children, data, location }) => (
           ]}
           link={[
             { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
-        ]}
+          ]}
         />
         <Header location={location} data={data} />
         <ContactModal />
-        <Content isHome={location.pathname === '/'} >
+        <Content location={location} isHome={location.pathname === '/'} >
           {children}
         </Content>
         <Footer />
