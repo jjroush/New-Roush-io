@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Heart from './LikeSymbol';
+import React, { useState, useEffect } from 'react'
+import Heart from './LikeSymbol'
 /* eslint-disable */
 
 
@@ -15,7 +15,6 @@ function LikeButton(props) {
     });
 
     function handleClick(article) {
-        console.log(predictedLikeCount);
         if (liked === false) {
             fetch(`https://us-central1-roushio.cloudfunctions.net/addLike?article=${article}`);
             setpredictedLikeCount(predictedLikeCount + 1);

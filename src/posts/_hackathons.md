@@ -1,6 +1,6 @@
 ---
 title: "Hackathons: "
-date: ""
+date: "3000-01-01"
 ---
 
 ![HTTP2 80's cover](https://roush-image.s3.amazonaws.com/http2-cover.jpg)

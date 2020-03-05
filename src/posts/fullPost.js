@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import { graphql } from 'gatsby'
 import EmailSignup from '../components/Posts/EmailSignup'
 import LikeButton from '../components/Posts/LikeButton'
+import PostLikeContext from '../components/Posts/PostLikeContext'
+
 
 const LikeCountSpan = styled.span`
   color: #800000;
@@ -15,17 +17,26 @@ const BlogFooterContainer = styled.div`
 `;
 
 export default class PostPage extends Component {
+  static contextType = PostLikeContext;
   constructor(props) {
     super(props);
     this.state = {
-      likes: false
+      likes: 0
     };
   }
 
+
   componentDidMount() {
-    fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${this.props.location.pathname.slice(0, -1).substring(7)}`)
-      .then(response => response.json())
-      .then(data => this.setState({ likes: data.Likes }))
+    const postLikes = this.context;
+    const postSlug = this.props.location.pathname.slice(0, -1).substring(7);
+
+    if (postLikes[postSlug]) {
+      this.setState({ likes: postLikes[postSlug].Likes });
+    } else {
+      fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${this.props.location.pathname.slice(0, -1).substring(7)}`)
+        .then(response => response.json())
+        .then(data => this.setState({ likes: data.Likes }))
+    }
   }
 
   render() {
