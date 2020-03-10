@@ -30,7 +30,7 @@ export default class PostPage extends Component {
     const postLikes = this.context;
     const postSlug = this.props.location.pathname.slice(0, -1).substring(7);
 
-    if (postLikes[postSlug]) {
+    if (postLikes) {
       this.setState({ likes: postLikes[postSlug].Likes });
     } else {
       fetch(`https://us-central1-roushio.cloudfunctions.net/getLikes?article=${this.props.location.pathname.slice(0, -1).substring(7)}`)
