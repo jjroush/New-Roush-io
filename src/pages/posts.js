@@ -5,7 +5,7 @@ import PostListing from '../components/Posts/PostListing'
 import EmailSignup from '../components/Posts/EmailSignup'
 import PostLikeContext from '../components/Posts/PostLikeContext.js'
 
-function postPage(props, { data }) {
+function PostPage(props, { data }) {
   const [likes, setLikes] = useState({});
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function postPage(props, { data }) {
         desc
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC
+    allMdx(sort: { fields: [frontmatter___date], order: DESC
     }) {
       edges {
         node {
@@ -45,7 +45,7 @@ function postPage(props, { data }) {
       render={data => (
         <PostLikeContext.Provider value={likes}>
           <h1>Posts</h1>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+          {data.allMdx.edges.map(({ node }) => (
             <PostListing key={node.id} post={node} />
           ))}
           <EmailSignup />
@@ -55,4 +55,4 @@ function postPage(props, { data }) {
   )
 };
 
-export default postPage
+export default PostPage

@@ -6,8 +6,13 @@ module.exports = {
     desc: "Hey, I'm Jacob and I create things for the web.",
   },
   plugins: [
+    {
+    resolve: 'gatsby-plugin-mdx',
+    options: {
+      extensions: [`.mdx`, `.md`],
+      }
+    },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-layout`,

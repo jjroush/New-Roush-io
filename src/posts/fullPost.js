@@ -2,6 +2,7 @@ import React, { Component, useContext } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from 'gatsby'
 import EmailSignup from '../components/Posts/EmailSignup'
 import LikeButton from '../components/Posts/LikeButton'
@@ -41,31 +42,28 @@ export default class PostPage extends Component {
 
   render() {
     const { data } = this.props
+    console.log(this.props);
     return (
       <>
         <Helmet
-          title={`${data.markdownRemark.frontmatter.title} | Roush.io`}
+          title={`${data.mdx.frontmatter.title} | Roush.io`}
           meta={[
             {
               name: 'description',
-              content: data.markdownRemark.excerpt,
+              content: data.mdx.excerpt,
             },
             {
               name: 'keywords',
               content:
-                data.markdownRemark.frontmatter.keywords ||
+                data.mdx.frontmatter.keywords ||
                 'Jacob, Roush, Developer, Web, Iowa, Roushio',
             },
           ]}
         />
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <span>{data.markdownRemark.frontmatter.date + ' - '}<LikeCountSpan>{`    ${this.state.likes ? this.state.likes : 0} like${this.state.likes !== 1 ? 's' : ''}`}</LikeCountSpan></span>
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <span>{data.mdx.frontmatter.date + ' - '}<LikeCountSpan>{`    ${this.state.likes ? this.state.likes : 0} like${this.state.likes !== 1 ? 's' : ''}`}</LikeCountSpan></span>
         <br />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.markdownRemark.html,
-          }}
-        />
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
         <BlogFooterContainer>
           <LikeButton article={this.props.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
           <EmailSignup />
@@ -77,8 +75,8 @@ export default class PostPage extends Component {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt
       frontmatter {
         title
