@@ -17,7 +17,7 @@ jobs:
           node-version: 12.16.3
       - name: Build
         run: |
-          npm ci --ignore-scripts
+          npm ci --verbose
           npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
