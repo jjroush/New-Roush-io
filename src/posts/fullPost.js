@@ -1,9 +1,9 @@
-import React, { Component, useContext } from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from 'gatsby'
+
 import EmailSignup from '../components/Posts/EmailSignup'
 import LikeButton from '../components/Posts/LikeButton'
 import PostLikeContext from '../components/Posts/PostLikeContext'

@@ -15,7 +15,7 @@ const Content = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   max-width: 960px;
-  min-height: ${({ isHome }) => (isHome ? '0' : '60vh')};
+  min-height: ${({ isHome }) => (isHome ? '0' : '70vh')};
 `;
 
 const TemplateWrapper = ({ children, data, location }) => (
