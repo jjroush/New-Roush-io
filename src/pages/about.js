@@ -22,31 +22,26 @@ export default class aboutPage extends Component {
         <div>
           <h1>About</h1>
           <p>Hey, I'm Jacob Roush.</p>
-          <h3>The Web is a pretty cool place.</h3>
           <p>
-            I am a Web Developer based out of central Iowa who is currently
-            interning at Hy-vee and a student at Iowa State University. An
-            important part of being a developer is having a passion for what you
-            make. I've worked on a couple different projects using: Node.js,
-            React, etc that you can check out here.
+            I am a Software Engineer in Iowa working for Hy-Vee, a midwestern grocery store chain with over 260 supermarkets.
+            As a developer I am always learning, particarly in the area of JavaScript and general web development space.
+          </p>
+          <p>
+            I am currently focused on working with techonlogies like Node.js, Next.js, and Serverless.
+            I do my best to share what I've learned through Github and blog posts.
           </p>
           <h3>More About Me</h3>
           <p>
-            I've been doing Web Development for around {devYears()} years. I've
-            always had an interest in technology. Another skill that I am
-            passionate about is video production. I think video can be a cool
-            tool to tell stories. You can check out some of that work{' '}
-            <Link to="/video">{'here'}</Link>
+            I've been doing Web Development for {devYears()} years. I've
+            always had an interest in technology.
           </p>
         </div>
 
         <div>
           <p>
-            I am currently working towards my Bachleor's in Managment of
-            Information Systems. This is a degree that gives both technical and
-            business knowledge. The program is perfect for me as it combines my
-            interest of business and the problem-solving involved. As well as
-            technology by learning how to solve these problems with technology.
+            I have a  Bachleor's in Managment of
+            Information Systems. The program was a perfect for me as it combines my
+            interest of business with learning how to solve these problems with technology.
           </p>
           <p>
             I am big fan of spicy food and am constantly on the lookout for new

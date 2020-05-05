@@ -22,16 +22,10 @@ const projectList = [
         desc: 'Built a web scrapper using Node.js and Cheerio to check the Nvidia website and see if a product is available',
         img: '',
     }, {
-        name: 'Waukee Film Festival',
-        link: 'http://www.waukeefilmfest.org/',
-        tags: ['wordpress', 'PHP'],
-        desc: 'Made a website using WordPress to advertise and also handle video submissions.',
-        img: '', 
-    }, {
-        name: 'Random Design Quote',
-        link: 'https://github.com/jjroush/random-quote',
-        tags: ['flexbox'],
-        desc: 'Created a basic responsive website that takes in an api and display\'s it.',
+        name: 'Finding Ferrell Python Demo',
+        link: 'https://github.com/jjroush/python-finding-ferrell-demo',
+        tags: ['Python'],
+        desc: 'Python demo of a facial recoginition app that will find identify Will Ferrell in pictures.',
         img: '',
     }, {
         name: 'Shape Detection API',

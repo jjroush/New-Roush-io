@@ -37,7 +37,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-88693051-2',
-        // Puts tracking script in the head instead of the body
         head: false,
         respectDNT: true,
       },
@@ -55,14 +54,6 @@ module.exports = {
         name: 'src',
         path: `${__dirname}/src/`,
         ignore: isLocal ? [] : ['**/_*.mdx']
-      },
-    },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: 'roushio',
-        protocol: 'https',
-        hostname: 'roush.io',
       },
     },
     'gatsby-transformer-sharp',
