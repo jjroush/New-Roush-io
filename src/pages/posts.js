@@ -35,7 +35,7 @@ function PostPage(props, { data }) {
           fields {
             slug
           }
-        html
+        body
         excerpt
         }
       }

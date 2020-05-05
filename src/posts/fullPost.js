@@ -42,7 +42,6 @@ export default class PostPage extends Component {
 
   render() {
     const { data } = this.props
-    console.log(this.props);
     return (
       <>
         <Helmet

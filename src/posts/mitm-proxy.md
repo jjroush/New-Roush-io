@@ -2,10 +2,9 @@
 title: "View Network Traffic for Mobile Apps"
 date: "2019-01-25"
 ---
-<a href="https://knowyourmeme.com/memes/hackerman">
+
 <img style="float: right;padding-left:10px;"
-src="https://s3.amazonaws.com/roush-image/hackermanx200.jpg" alt="Mr. Robot">
-</a>
+src="https://s3.amazonaws.com/roush-image/hackermanx200.jpg" alt="Mr. Robot" />
 
 I've watched a lot of Mr. Robot. I also have been binging two great podcast on hacking/IT security: *Darknet Diaries* and *Hackable?*. These shows have made me slightly paranoid about application security. 
 
@@ -56,4 +55,4 @@ Some apps use certificate pinning which is best explained [here](https://infinum
 
 MITM Proxy gives a cool look into how mobile applications work. Some practical use cases is creating a wrapper for an undocumented API or looking into security practices. While, the browser is good about warning us when we are getting content served over http instead of https, with mobile applications that responsibility is on the developer. There is less transparency relating to network request compared to a web application.
 
-If you are curious about the implications of insecure network request, I suggest you checkout the *Hackable?* podcast titled [pet-nology](https://hackablepodcast.com/episodes/pet-nology). 
+If you are curious about the implications of insecure network request, I suggest you checkout the *Hackable?* podcast titled [pet-nology](https://hackablepodcast.com/episodes/pet-nology) . 
