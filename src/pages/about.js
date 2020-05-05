@@ -24,7 +24,7 @@ export default class aboutPage extends Component {
           <p>Hey, I'm Jacob Roush.</p>
           <p>
             I am a Software Engineer in Iowa working for Hy-Vee, a midwestern grocery store chain with over 260 supermarkets.
-            As a developer I am always learning, particarly in the area of JavaScript and general web development space.
+            As a developer I am always learning, particarly in the area of JavaScript and the general web development space.
           </p>
           <p>
             I am currently focused on working with techonlogies like Node.js, Next.js, and Serverless.
