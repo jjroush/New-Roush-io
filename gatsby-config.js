@@ -54,7 +54,7 @@ module.exports = {
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
-        ignore: isLocal ? [] : ['**/_*.md']
+        ignore: isLocal ? [] : ['**/_*.mdx']
       },
     },
     {
