@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { MDXProvider } from "@mdx-js/react"
 import styled from 'styled-components'
 
 import Header from './Header'
@@ -9,6 +10,7 @@ import Footer from './Footer'
 import ContactModal from './ContactModal'
 import favicon from '../icons/favicon.png'
 import './layout.css'
+import Code from './Posts/Code'
 
 const Content = styled.div`
   margin: 0 auto;
@@ -17,6 +19,12 @@ const Content = styled.div`
   max-width: 960px;
   min-height: ${({ isHome }) => (isHome ? '0' : '70vh')};
 `;
+
+const components = {
+  pre: props => <div {...props} />,
+  code: props => <Code {...props}/>
+}
+
 
 const TemplateWrapper = ({ children, data, location }) => (
   <StaticQuery
@@ -51,9 +59,11 @@ const TemplateWrapper = ({ children, data, location }) => (
         />
         <Header location={location} data={data} />
         <ContactModal />
-        <Content location={location} isHome={location.pathname === '/'} >
-          {children}
-        </Content>
+        <MDXProvider components={components}>
+          <Content location={location} isHome={location.pathname === '/'} >
+            {children}
+          </Content>
+        </MDXProvider>
         <Footer />
       </>
     )}

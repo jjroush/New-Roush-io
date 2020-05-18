@@ -1,5 +1,5 @@
 ---
-title: 'Hashcracking in Node.js with Worker Threads Demo'
+title: 'Node.js Worker Thread Demo with Hash Cracking'
 date: '2018-08-12'
 keywords: 'worker threads, node.js, multithreading'
 hero: ''
@@ -20,12 +20,14 @@ At a glance, JavaScript is single-threaded. Worker threads allow
 
 For this Demo I needed a CPU-intensive task
 
-```js
+```
 
-let array = [1,2,3]
-
-array.map(() => console.log('hi'));
-
+for (let i = 0; i < passwordArray.length; i++) {
+    const hash = crypto.createHash('md5').update(passwordArray[i]).digest('hex');
+    if (hash === hashInput) {
+        match = passwordArray[i];
+    }
+} 
 ```
 
 # Benefits

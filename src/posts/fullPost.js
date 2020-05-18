@@ -59,14 +59,14 @@ export default class PostPage extends Component {
             },
           ]}
         />
-        <h1>{data.mdx.frontmatter.title}</h1>
-        <span>{data.mdx.frontmatter.date + ' - '}<LikeCountSpan>{`    ${this.state.likes ? this.state.likes : 0} like${this.state.likes !== 1 ? 's' : ''}`}</LikeCountSpan></span>
-        <br />
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        <BlogFooterContainer>
-          <LikeButton article={this.props.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
-          <EmailSignup />
-        </BlogFooterContainer>
+          <h1>{data.mdx.frontmatter.title}</h1>
+          <span>{data.mdx.frontmatter.date + ' - '}<LikeCountSpan>{`    ${this.state.likes ? this.state.likes : 0} like${this.state.likes !== 1 ? 's' : ''}`}</LikeCountSpan></span>
+          <br />
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <BlogFooterContainer>
+            <LikeButton article={this.props.location.pathname.slice(0, -1).substring(7)} likes={this.state.likes} />
+            <EmailSignup />
+          </BlogFooterContainer>
       </>
     )
   }
